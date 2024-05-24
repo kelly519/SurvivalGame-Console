@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 public class Location {
 
-    public String name,itemName;
-    public int locationId=-10;
-    public boolean item;
+    protected String name,itemName;
+    protected int locationId=-10;
+    protected boolean item;
 
-    Obstacle obstacle=new Obstacle();
+    protected Obstacle obstacle=new Obstacle();
 
     protected Player player=new Player();
     protected Inventory inventory=new Inventory();
@@ -50,17 +50,17 @@ public class Location {
             if(combat(obsNum)==true)
             {
                 System.out.println("You KILLED all the enemies in the "+ name + "!!!");
-                if(itemName.equals("Food") && inventory.isFood()==false)
+                if(itemName.equals("Food") && !inventory.isFood())
                 {
                     System.out.println("You win " + itemName +  " item :) :)");
                     inventory.setFood(true);
                 }
-                else if(itemName.equals("Water") && inventory.isWater()==false)
+                else if(itemName.equals("Water") && !inventory.isWater())
                 {
                     System.out.println("You win " + itemName +  " item :) :)");
                     inventory.setWater(true);
                 }
-                else if(itemName.equals("Fire Wood") && inventory.isFireWood()==false )
+                else if(itemName.equals("Fire Wood") && !inventory.isFireWood())
                 {
                     System.out.println("You win " + itemName +  " item :) :)");
                     inventory.setFireWood(true);

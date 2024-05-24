@@ -14,7 +14,7 @@ public class SafeHouse extends Location {
 
     public void getLocation()
     {
-        if(inventory.isFireWood()==true && inventory.isFood()==true && inventory.isWater()==true)
+        if(inventory.isFireWood() && inventory.isFood() && inventory.isWater())
         {
             System.out.println("Congratulations! You brought items that your village needs.");
             System.out.println("You Win!!");
